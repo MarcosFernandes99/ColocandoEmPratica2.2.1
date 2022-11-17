@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ol,
+        ul {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h1>CADASTRE A SUA LOJA:</h1>
+
+        <div>
+            <label for="Nome">Nome:</label>
+            <input id="Nome" type="text" name="Nome" placeholder="Ex.Magalu">
+        </div>
+        <div>
+            <label for="Endereço">Endereço:</label>
+            <input id="Endereço" type="text" name="Endereço" placeholder="Ex.Rua Morango, 123">
+        </div>
+        <div>
+            <label>Dias da semana em que há funcionamento:</label>
+            <p>
+                <label for="Segunda">Segunda</label>
+                <input id="Segunda" type="checkbox" name="Segunda" value="Segunda">
+                <label for="Terça">Terça</label>
+                <input id="Terça" type="checkbox" name="Terça" value="Terça">
+                <label for="Quarta">Quarta</label>
+                <input id="Quarta" type="checkbox" name="Quarta" value="Quarta">
+                <label for="Quinta">Quinta</label>
+                <input id="Quinta" type="checkbox" name="Quinta" value="Quinta">
+                <label for="Sexta">Sexta</label>
+                <input id="Sexta" type="checkbox" name="Sexta" value="Sexta">
+                <label for="Sábado">Sábado</label>
+                <input id="Sábado" type="checkbox" name="Sábado" value="Sábado">
+                <label for="Domingo">Domingo</label>
+                <input id="Domingo" type="checkbox" name="Domingo" value="Domingo">
+            </p>
+        </div>
+        <div>
+            <label for="HorárioAbertura">Horário de Abertura:</label>
+            <input type="text" id="HorárioAbertura" name="HorárioAbertura" placeholder="Ex. 08h00">
+        </div>
+        <div>
+            <label for="HorárioFechamento">Horário de Fechamento:</label>
+            <input type="text" id="HorárioFechamento" name="HorárioFechamento" placeholder="Ex. 18h00">
+        </div>
+    </form>
+
+</body>
+
+</html>
