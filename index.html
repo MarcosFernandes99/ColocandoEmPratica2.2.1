@@ -5,59 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        html {
-            box-sizing: border-box;
-            font-size: 16px;
+    <title>Document</title>  
+    <link rel="stylesheet" href="css.css">  
+    <script>
+
+        var form = document.getElementById('form');
+
+        function mudarCor (){
+            var cor = 'pink'
+
+            document.form.style.backgroundColor = cor
         }
 
-        *,
-        *:before,
-        *:after {
-            box-sizing: inherit;
-        }
+        form.addEventListener('focus', mudarCor)
+        
 
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        ol,
-        ul {
-            margin: 0;
-            padding: 0;
-            font-weight: normal;
-        }
+        // form.addEventListener('focus', (event) => {
+        //     event.target.style.backgroundColor = 'pink';
+        // }, true);
 
-        ol,
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+ 
+    </script>
 </head>
 
 <body>
-    <form>
-        <h1>CADASTRE A SUA LOJA:</h1>
+    <form id="form">
+        <h1 class="titulo">CADASTRE A SUA LOJA:</h1>
 
-        <div>
+        <div class="nome">
             <label for="Nome">Nome:</label>
             <input id="Nome" type="text" name="Nome" placeholder="Ex.Magalu">
         </div>
-        <div>
+        <div class="endereço">
             <label for="Endereço">Endereço:</label>
             <input id="Endereço" type="text" name="Endereço" placeholder="Ex.Rua Morango, 123">
         </div>
-        <div>
+        <div class="funcionamento">
             <label>Dias da semana em que há funcionamento:</label>
             <p>
                 <label for="Segunda">Segunda</label>
@@ -76,11 +59,11 @@
                 <input id="Domingo" type="checkbox" name="Domingo" value="Domingo">
             </p>
         </div>
-        <div>
+        <div class="horarioAbertura">
             <label for="HorárioAbertura">Horário de Abertura:</label>
             <input type="text" id="HorárioAbertura" name="HorárioAbertura" placeholder="Ex. 08h00">
         </div>
-        <div>
+        <div class="horarioFechamento">
             <label for="HorárioFechamento">Horário de Fechamento:</label>
             <input type="text" id="HorárioFechamento" name="HorárioFechamento" placeholder="Ex. 18h00">
         </div>
