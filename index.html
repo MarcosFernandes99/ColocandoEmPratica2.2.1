@@ -5,31 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>  
-    <link rel="stylesheet" href="css.css">  
-    <script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
 
-        var form = document.getElementById('form');
-
-        function mudarCor (){
-            var cor = 'pink'
-
-            document.form.style.backgroundColor = cor
-        }
-
-        form.addEventListener('focus', mudarCor)
-        
-
-        // form.addEventListener('focus', (event) => {
-        //     event.target.style.backgroundColor = 'pink';
-        // }, true);
-
- 
-    </script>
 </head>
 
 <body>
-    <form id="form">
+    <form id="form" action="api.flit.com.br/submeterDados" method="post                           ">
+
         <h1 class="titulo">CADASTRE A SUA LOJA:</h1>
 
         <div class="nome">
@@ -67,8 +50,39 @@
             <label for="HorárioFechamento">Horário de Fechamento:</label>
             <input type="text" id="HorárioFechamento" name="HorárioFechamento" placeholder="Ex. 18h00">
         </div>
+        <button type="submit">Submit Form</button>
     </form>
+    <p id="log"></p>
 
 </body>
+<script>
+
+    var borda = document.querySelector('input');
+    var atualizacao = document.querySelector('input')
+    var form = document.getElementById('form')
+    var log = document.getElementById('log')
+
+    borda.addEventListener('click', inserirBorda)
+    atualizacao.addEventListener('click', atualizar)
+    form.addEventListener('submit', logSubmit)
+
+    function inserirBorda(e) {
+        var cor = 'blueviolet'  
+
+        e.target.style.borderColor = cor
+    }
+    function atualizar(e){
+        console.log(e)
+    }
+
+    function logSubmit(e){
+        log.textContent = `Preparando envio...`;
+        event.preventDefault();
+    }
+
+
+   
+
+</script>
 
 </html>
