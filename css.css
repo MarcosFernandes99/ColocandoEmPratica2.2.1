@@ -1,0 +1,24 @@
+.meuForm {
+    width: 100vw;
+    height: 80vh;
+    text-align: center;
+    background-color:darkgray;
+}
+
+.classeIgual {
+    line-height: 5vh;
+    text-align: left;   
+    margin-left: 3vw;
+    width: 50vw;
+    height: 5vh;
+    background-color: azure;
+    border-style: solid;
+    
+}
+
+
+
+
+/* @media screen and (min-width: 60vw) {
+    .classeIgual {width: 10vw; float: left;}
+} */

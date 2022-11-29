@@ -11,21 +11,20 @@
 </head>
 
 <body>
-    <form id="form" action="api.flit.com.br/submeterDados" method="post                           ">
+    <form class="meuForm" id="form" action="api.flit.com.br/submeterDados" method="post                           ">
 
         <h1 class="titulo">CADASTRE A SUA LOJA:</h1>
 
-        <div class="nome">
+        <div class="nome classeIgual">
             <label for="Nome">Nome:</label>
             <input id="Nome" type="text" name="Nome" placeholder="Ex.Magalu">
         </div>
-        <div class="endereço">
+        <div class="endereço classeIgual">
             <label for="Endereço">Endereço:</label>
             <input id="Endereço" type="text" name="Endereço" placeholder="Ex.Rua Morango, 123">
         </div>
-        <div class="funcionamento">
-            <label>Dias da semana em que há funcionamento:</label>
-            <p>
+        <div class="funcionamento classeIgual">
+            <label>Dias da semana em que há funcionamento:</label>            
                 <label for="Segunda">Segunda</label>
                 <input id="Segunda" type="checkbox" name="Segunda" value="Segunda">
                 <label for="Terça">Terça</label>
@@ -39,18 +38,20 @@
                 <label for="Sábado">Sábado</label>
                 <input id="Sábado" type="checkbox" name="Sábado" value="Sábado">
                 <label for="Domingo">Domingo</label>
-                <input id="Domingo" type="checkbox" name="Domingo" value="Domingo">
-            </p>
+                <input id="Domingo" type="checkbox" name="Domingo" value="Domingo">          
         </div>
-        <div class="horarioAbertura">
+        <div class="horarioAbertura classeIgual">
             <label for="HorárioAbertura">Horário de Abertura:</label>
             <input type="text" id="HorárioAbertura" name="HorárioAbertura" placeholder="Ex. 08h00">
         </div>
-        <div class="horarioFechamento">
+        <div class="horarioFechamento classeIgual">
             <label for="HorárioFechamento">Horário de Fechamento:</label>
             <input type="text" id="HorárioFechamento" name="HorárioFechamento" placeholder="Ex. 18h00">
         </div>
-        <button type="submit">Submit Form</button>
+        <div class="classeIgual">
+            <button type="submit">Submit Form</button>
+        </div>
+      
     </form>
     <p id="log"></p>
 
@@ -61,10 +62,36 @@
     var atualizacao = document.querySelector('input')
     var form = document.getElementById('form')
     var log = document.getElementById('log')
+    var nome = document.getElementById('Nome')
+    var endereco = document.getElementById('Endereço')
+    var submit = document.getElementById('form')
 
     borda.addEventListener('click', inserirBorda)
     atualizacao.addEventListener('click', atualizar)
     form.addEventListener('submit', logSubmit)
+    nome.addEventListener('change', handleChangeNome)
+    endereco.addEventListener('change', handleChangeEndereco)
+    submit.addEventListener('submit', handleSubmit)
+
+
+
+    function handleChangeNome (e) {       
+        window.sessionStorage.setItem('Nome', e.target.value)
+    }
+
+    function handleChangeEndereco (e) {        
+        window.sessionStorage.setItem('Endereço', e.target.value)
+    }
+
+    function handleSubmit (e) {        
+       console.log('Session Nome', window.sessionStorage.getItem('Nome'))
+       console.log('Session Endereço', window.sessionStorage.getItem('Endereço'))
+
+       console.log('Local Nome', window.localStorage.getItem('Nome'))
+       console.log('Local Endereço', window.localStorage.getItem('Endereço'))
+
+       e.preventDefault()
+    }
 
     function inserirBorda(e) {
         var cor = 'blueviolet'  
